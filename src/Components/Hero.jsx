@@ -1,8 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext, useRef } from "react";
 import { assets } from "../assets/assets";
+import { AppContext } from "../Context/AppContext";
 
 export default function Hero() {
+
+    const {setSearchFilter, setIsSearched} = useContext(AppContext)
+
+    const titleRef = useRef(null)
+    const locationRef = useRef(null)
+
   return (
     <div className="container 2xl:px-20 mx-auto my-10">
       <div className="bg-gradient-to-r from-purple-800 to-purple-950 text-white py-16 text-center mx-2 rounded-xl">
@@ -19,11 +26,13 @@ export default function Hero() {
               className="h-4 sm:h-5"
               src={assets.search_icon}
               alt="search_icon"
+              ref={titleRef}
             />
             <input
               type="text"
               placeholder="Search for jobs"
               className="max-sm:text-xs p-2 rouned outline-none w-full"
+              ref={locationRef}
             />
           </div>
           <div className="flex items-center">
@@ -43,12 +52,27 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      <div className="border border-gray-300 shadow-md mx-2 mt-5 p-6 rounded-md flex">
+      <div
+        className="border border-gray-300 shadow-md mx-2 mt-5 p-6 rounded-md flex"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <div className="flex justify-center gap-10 lg:gap-16 flex-wrap">
           <p className="font-medium">Trusted by</p>
-          <img className="h-6" src={assets.microsoft_logo} alt="microsoft_logo" />
+          <img
+            className="h-6"
+            src={assets.microsoft_logo}
+            alt="microsoft_logo"
+          />
           <img className="h-6" src={assets.walmart_logo} alt="walmart_logo" />
-          <img className="h-6" src={assets.accenture_logo} alt="accenture_logo" />
+          <img
+            className="h-6"
+            src={assets.accenture_logo}
+            alt="accenture_logo"
+          />
           <img className="h-6" src={assets.samsung_logo} alt="samsung_logo" />
           <img className="h-6" src={assets.amazon_logo} alt="amazon_logo" />
           <img className="h-6" src={assets.adobe_logo} alt="adobe_logo" />
