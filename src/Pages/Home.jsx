@@ -9,11 +9,9 @@ import Footer from "../Components/Footer";
 export default function Home() {
   return (
     <div>
-      <Navbar/>
       <Hero/>
       <JobListing/>
       <AppDownlode/>
-      <Footer/>
     </div>
   );
 }

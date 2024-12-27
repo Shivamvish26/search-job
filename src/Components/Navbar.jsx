@@ -11,12 +11,16 @@ export default function Navbar() {
   return (
     <div className="shadow py-4">
       <div className="container px-4 2xl:px-20 mx-auto flex justify-between items-center">
-        <img src={assets.logo} alt="Logo" className="h-10" />
+        <Link to="/">
+          <img src={assets.logo} alt="Logo" className="h-10" />
+        </Link>
         {user ? (
           <div className="flex items-center gap-3">
             <Link to={"/application"}>Applied Jobs</Link>
             <p> | </p>
-            <p className="max-sm:hidden">Hi, {user.firstName + " " + user.lastName}</p>
+            <p className="max-sm:hidden">
+              Hi, {user.firstName + " " + user.lastName}
+            </p>
             <UserButton />
           </div>
         ) : (
