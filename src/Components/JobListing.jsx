@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../Context/AppContext";
 import { assets, JobCategories, JobLocations } from "../assets/assets";
 import JobCard from "./JobCard";
+import { Link } from "react-router-dom";
 
 export default function JobListing() {
   const { isSearched, searchFilter, setSearchFilter, jobs } =
@@ -158,16 +159,16 @@ export default function JobListing() {
         {/* Pagination */}
         {filterJobs.length > 0 && (
           <div className="flex items-center justify-center space-x-2 mt-10">
-            <a href="#job-list">
+            <Link href="#job-list">
               <img
                 onClick={() => setCurrentPage(Math.max(currentPage - 1), 1)}
                 src={assets.left_arrow_icon}
                 alt="Left Arrow"
               />
-            </a>
+            </Link>
             {Array.from({ length: Math.ceil(filterJobs.length / 6) }).map(
               (_, index) => (
-                <a href="#job-list" key={index}>
+                <Link href="#job-list" key={index}>
                   <button
                     onClick={() => setCurrentPage(index + 1)}
                     className={`w-10 h-10 flex items-center justify-center border border-gray-300 rounded ${
@@ -178,10 +179,10 @@ export default function JobListing() {
                   >
                     {index + 1}
                   </button>
-                </a>
+                </Link>
               )
             )}
-            <a href="#job-list">
+            <Link href="#job-list">
               <img
                 onClick={() =>
                   setCurrentPage(
@@ -191,7 +192,7 @@ export default function JobListing() {
                 src={assets.right_arrow_icon}
                 alt="Right Arrow"
               />
-            </a>
+            </Link>
           </div>
         )}
       </section>

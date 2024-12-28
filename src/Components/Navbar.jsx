@@ -9,7 +9,7 @@ export default function Navbar() {
   const { user } = useUser();
 
   return (
-    <div className="shadow py-4">
+    <div className="shadow py-4 sticky top-0 bg-white z-50">
       <div className="container px-4 2xl:px-20 mx-auto flex justify-between items-center">
         <Link to="/">
           <img src={assets.logo} alt="Logo" className="h-10" />
