@@ -90,7 +90,9 @@ export default function ApplyJob() {
             </div>
             <div className="w-full lg:w-1/3 mt-8 lg-mt-0 lg:ml-8 space-y-5">
               {/* Right Section More Jobs */}
-              <h2 className="text-base font-medium">More Jobs from {jobData.companyId.name}</h2>
+              <h2 className="text-base font-medium">
+                More Jobs from {jobData.companyId.name}
+              </h2>
               {jobs
                 .filter(
                   (job) =>

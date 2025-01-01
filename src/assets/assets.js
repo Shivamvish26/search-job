@@ -144,6 +144,14 @@ export const jobsApplied = [
         status: 'Accepted',
         logo: company_icon,
     },
+    {
+        company: 'Wipro',
+        title: 'Full-End Developer',
+        location: 'Pune',
+        date: '30 Sep, 2024',
+        status: 'Rejected',
+        logo: company_icon,
+    },
 ];
 
 export const viewApplicationsPageData = [
